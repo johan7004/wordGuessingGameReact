@@ -17,15 +17,18 @@ export default function PlayerInput(props) {
 
   return (
     <div>
-      {hiddenString.map((data, i) => {
-        return <p>{i % 2 === 0 ? data : "_"}</p>;
-      })}
-
-      {props.playerTwoWord === inputWord ? (
-        <p>you win</p>
-      ) : (
-        <p>Find the word or die</p>
-      )}
+      <div className="hidden-words">
+        {hiddenString.map((data, i) => {
+          return <p>{i % 2 === 0 ? data : "_"}</p>;
+        })}
+      </div>
+      <div classname="message">
+        {props.playerTwoWord === inputWord ? (
+          <p>you win</p>
+        ) : (
+          <p>Find the word or die</p>
+        )}
+      </div>
     </div>
   );
 }
